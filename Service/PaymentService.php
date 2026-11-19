@@ -125,6 +125,8 @@ class PaymentService
     {
         if (str_contains($selectedPaymentMethodId, 'Visa') || str_contains($selectedPaymentMethodId, 'Mastercard')) {
             $selectedPaymentMethodId = 'creditcard';
+        } elseif (str_contains($selectedPaymentMethodId, 'amex')) {
+            $selectedPaymentMethodId = 'amex';
         }
 
         return $selectedPaymentMethodId;
